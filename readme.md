@@ -1,0 +1,1 @@
+## 1. Treinamento de Haar Cascade para projeto placas_cd do 3º Semestre

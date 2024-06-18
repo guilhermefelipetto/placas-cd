@@ -1,0 +1,13 @@
+.venv
+__pycache__/
+dados/
+cascade/
+database_scripts/query_teste.sql
+database_scripts/__pycache__
+model/negatives.txt
+model/positives.txt
+negatives/
+oconsole.spec
+plate_register.spec
+teste.py
+video.MTS
