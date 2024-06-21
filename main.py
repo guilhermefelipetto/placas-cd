@@ -1,7 +1,3 @@
-"""
-todo: salvar dados de login do banco, e demais paths em variaveis de ambiente
-"""
-
 import cv2
 import pytesseract
 import mysql.connector
@@ -22,6 +18,7 @@ if __name__ == "__main__":
     try:
         conn = mysql.connector.connect(
             host=getenv("MYSQL_HOST"),
+            port=getenv("MYSQL_PORT"),
             user=getenv("MYSQL_USER"),
             password=getenv("MYSQL_PASSWORD"),
             database=getenv("MYSQL_DB")

@@ -12,6 +12,7 @@ def plate_is_valid(plate_text: str):
 
 def plate_insert(conn, cursor, valid_plate: str):
     if conn.is_connected():
+        cursor.execute('USE banco_placas;')
         cursor.execute('SELECT COUNT(*) FROM placas_registradas WHERE placa IN (%s)', (valid_plate,))
         res = cursor.fetchone()
 
@@ -19,7 +20,7 @@ def plate_insert(conn, cursor, valid_plate: str):
             cursor.execute('INSERT INTO registro (placa, tipo) VALUES (%s, "Registrada")', (valid_plate,))
         else:
             cursor.execute('INSERT INTO registro (placa, tipo) VALUES (%s, "NR")', (valid_plate,))
-    
+
     conn.commit()
     print('inserido no banco!')
 
